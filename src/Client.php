@@ -2,9 +2,7 @@
 
 namespace ArtARTs36\Morpher;
 
-use ArtARTs36\Morpher\Contracts\Client as MainContract;
-
-class Client implements MainContract
+class Client implements Contracts\Client
 {
     protected const BASE_URL = 'https://ws3.morpher.ru';
 

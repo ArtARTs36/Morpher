@@ -7,7 +7,7 @@ use ArtARTs36\Morpher\Entities\Adjective;
 use ArtARTs36\Morpher\Entities\Date;
 use ArtARTs36\Morpher\Entities\Noun;
 
-class Morpher
+class Morpher implements Contracts\Morpher
 {
     protected const URL_METHOD_DECLENSION = 'russian/declension';
     protected const URL_METHOD_GENDERS = 'russian/genders';
