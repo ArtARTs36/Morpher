@@ -28,12 +28,21 @@ class Client implements Contracts\Client
 
     public function get(string $url, array $params = []): array
     {
-        return $this->validate(
-            $this->guzzle->get(
-                $this->url($url, $params),
-                $this->options()
-            )->getBody()->getContents()
-        );
+        return $this->execute($url, $params);
+    }
+
+    protected function execute(string $url, array $params = []): array
+    {
+        return $this->validate($this->send($url, $params));
+    }
+
+    protected function send(string $url, array $params = []): string
+    {
+        return $this->guzzle->request(
+            'get',
+            $this->url($url, $params),
+            $this->options()
+        )->getBody()->getContents();
     }
 
     protected function validate(string $response): array
