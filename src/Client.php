@@ -10,7 +10,7 @@ class Client implements Contracts\Client
 
     protected $baseUrl;
 
-    public function __construct(\GuzzleHttp\Client $guzzle, string $baseUrl = self::BASE_URL)
+    public function __construct(\GuzzleHttp\ClientInterface $guzzle, string $baseUrl = self::BASE_URL)
     {
         $this->guzzle = $guzzle;
         $this->baseUrl = $baseUrl;
